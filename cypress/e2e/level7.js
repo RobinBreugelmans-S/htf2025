@@ -12,7 +12,7 @@ export function level7() {
         
         targets.then(($targets => {
           const target = cy.wrap($targets[j]);
-          letter.drag(target);
+          letter.drag($targets[j]);
           // target.trigger("drop", { dataTransfer });
         }));
 
