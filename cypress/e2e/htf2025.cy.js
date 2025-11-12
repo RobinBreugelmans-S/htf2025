@@ -6,6 +6,7 @@ import { level3 } from "./level3";
 import { level4 } from "./level4";
 import { level5 } from "./level5";
 import { level7 } from "./level7";
+import { level10 } from "./level10";
 
 Cypress.on('window:load', (cyWindow) => {
   disableMotion(cyWindow);
@@ -26,5 +27,6 @@ describe("template spec", () => {
     level4();
     level5();
     level7();
+    level10();
   });
 })
