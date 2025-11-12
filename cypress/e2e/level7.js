@@ -2,19 +2,19 @@ const word = "ATLANTIS";
 
 export function level7() {
   for(let i = 0; i < word.length; ++i) {
-    let letter = cy.get(`div[class='draggable-cube', data-letter='${word[i]}']`);
-    let target = cy.get(`div[class='target-slot', data-letter='${word[i]}']`);
+    let letters = cy.get(`div.draggable-cube[data-letter='${word[i]}']`);
+    let targets = cy.get(`div.target-slot[data-letter='${word[i]}']`);
     
-    if (!Array.isArray(letter)) {
-      letter = [letter];
-      target = [target];
+    if (!Array.isArray(letters)) {
+      letters = [letters];
+      targets = [targets];
     }
     
     const dataTransfer = new DataTransfer;
-    for (let j = 0; j < letter.length;) {
-      letter[j].trigger('dragstart', { dataTransfer });
-      target[j].trigger('drop', { dataTransfer });
-      letter[j].trigger('dragend', { dataTransfer });
+    for (let j = 0; j < letters.length;) {
+      // letters[j].trigger("dragstart", { dataTransfer });
+      // targets[j].trigger("drop", { dataTransfer });
+      // letters[j].trigger("dragend", { dataTransfer });
     }
   }
 }
