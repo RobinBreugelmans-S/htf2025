@@ -1,31 +1,50 @@
 const word = "ATLANTIS";
 
-export function level7() {
-  for(let i = 0; i < word.length; ++i) {
-    let letters = cy.get(`div.draggable-cube[data-letter='${word[i]}']`);
-    let targets = cy.get(`div.target-slot[data-letter='${word[i]}']`);
-    
-    letters.then(($letters => {
-      for (let j = 0; j < $letters.length; ++j) {
-        const letter = cy.wrap($letters[j]);
-        // letter.trigger("dragstart", { dataTransfer });
-        
-        targets.then(($targets => {
-          const target = cy.wrap($targets[j]);
-          letter.drag($targets[j]);
-          // target.trigger("drop", { dataTransfer });
-        }));
+// export function level7() {
+//   let letters = cy.get(`div[class='draggable-cube']`);
+//   let targets = cy.get(`div[class='target-slot']`);
+//
+//   for (let i = 0; i < word.length; i++) {
+//     let c = word.charAt(i);
+//     console.log(letters);
+//   }
+// }
 
-        // letter.trigger("dragend", { dataTransfer });
+export function level7(){
+  cy.get('div.target-slot').then(($targets) => {
+    let targets = $targets.toArray();
+
+    cy.get('div.draggable-cube').then(($els) => {
+      let letters = $els.toArray();
+      let letter_c = letters.map(el => el.innerText);
+
+      let monster = {};
+
+      for (let i = 0; i < word.length; i++) {
+        let char = letter_c[i];
+
+        if (char in monster){
+          monster[char].push(letters[i]);
+        } else{
+          monster[char] = [letters[i]];
+        }
       }
-    }));
 
-    
-    const dataTransfer = new DataTransfer;
-    for (let j = 0; j < letters.length; ++j) {
-      letters[j].trigger("dragstart", { dataTransfer });
-      targets[j].trigger("drop", { dataTransfer });
-      letters[j].trigger("dragend", { dataTransfer });
-    }
-  }
+      console.log(monster);
+
+      for (let i = 0; i < word.length; i++){
+        let char = word.charAt(i);
+
+        let button = monster[char].shift();
+
+        button.trigger("dragstart", targets[i]);
+        button.trigger("drop", targets[i]);
+        button.trigger("dragend", targets[i]);
+
+      }
+
+    });
+  });
 }
+
+
