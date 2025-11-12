@@ -13,4 +13,5 @@ export function level3() {
       cy.tick(25000);
     });
   }
+  cy.tick(25000);
 }

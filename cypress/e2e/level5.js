@@ -21,8 +21,6 @@
 // }
 
 export function level5() {
-  cy.tick(25000);
-
   cy.get(`div[id^='square-']`).each((value) => {
     cy.wrap(value).trigger("mouseover", {force: true});
     cy.tick(25000);

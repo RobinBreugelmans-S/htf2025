@@ -11,4 +11,5 @@ export function doLogin() {
     cy.get("input[type='number']").type("1");
     cy.get("select").select("Finland");
     cy.get("button[class='btn btn-primary center-button']").click();
+    cy.tick(25000);
 }

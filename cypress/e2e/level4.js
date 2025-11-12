@@ -1,4 +1,4 @@
-export function level4(){
-  cy.tick(25000);
+export function level4() {
   cy.get("div[class='square']").dblclick({force: true});
+  cy.tick(25000);
 }

@@ -1,5 +1,4 @@
-export function level1(){
-    cy.tick(25000);
+export function level1() {
     cy.get("div[id='letters']").click();
     cy.tick(25000);
     cy.get("span[class='close']").click();
