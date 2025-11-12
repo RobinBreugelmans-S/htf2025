@@ -17,4 +17,3 @@ export function level5() {
 
   cy.tick(25000);
 }
-
