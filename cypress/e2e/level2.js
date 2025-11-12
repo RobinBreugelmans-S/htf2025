@@ -1,4 +1,4 @@
-export function doLevel2() {
+export function level2() {
     for (let i = 0; i < 5; ++i) {
         cy.get(`div[id='randomValue-${i}']`).then($el => {
             clickSwitch(i, $el.text().trim() == "1" ? 1 : 2);

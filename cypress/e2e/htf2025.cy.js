@@ -1,11 +1,9 @@
 import { disableMotion } from "./util";
 import { doLogin } from "./login";
-import { doLevel1 } from "./level1";
-import { doLevel2 } from "./level2";
-
-Cypress.on('window:before:load', (cyWindow) => {
-  //disableMotion(cyWindow);
-});
+import { level1 } from "./level1";
+import { level2 } from "./level2";
+import { level3 } from "./level3";
+import { level4 } from "./level4";
 
 Cypress.on('window:load', (cyWindow) => {
   disableMotion(cyWindow);
@@ -18,7 +16,9 @@ describe("template spec", () => {
 
   it("passes", () => {
     doLogin();
-    doLevel1();
-    doLevel2();
+    level1();
+    level2();
+    level3();
+    level4();
   });
 })
