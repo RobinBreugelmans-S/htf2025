@@ -1,4 +1,4 @@
-export function doLevel1(){
+export function level1(){
     cy.tick(25000);
     cy.get("div[id='letters']").click();
     cy.tick(25000);
