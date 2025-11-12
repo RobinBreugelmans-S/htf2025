@@ -1,4 +1,4 @@
-dict = {
+const dict = {
   "images/submarine/up.png": Cypress.Keyboard.Keys.UP,
   "images/submarine/left.png": Cypress.Keyboard.Keys.LEFT,
   "images/submarine/right.png": Cypress.Keyboard.Keys.RIGHT,
