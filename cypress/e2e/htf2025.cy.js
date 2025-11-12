@@ -17,11 +17,11 @@ Cypress.on('window:load', (cyWindow) => {
 describe("template spec", () => {
   before(() => {
     cy.clock();
+    cy.viewport(1920, 1080);
     console.clear();
   });
 
   it("passes", () => {
-    cy.viewport(1920, 1080);
     doLogin();
     level1();
     level2();
