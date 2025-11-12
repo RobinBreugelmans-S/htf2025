@@ -20,6 +20,7 @@ describe("template spec", () => {
   });
 
   it("passes", () => {
+    cy.viewport(1920, 1080);
     doLogin();
     level1();
     level2();
