@@ -1,6 +1,5 @@
 export function level5() {
   cy.tick(25000);
-  console.log("level5");
 
   for (let i = 0; i < 4; i++){
     let button = cy.get(`div[id^='square-${i}']`);
