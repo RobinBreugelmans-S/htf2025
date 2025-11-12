@@ -9,30 +9,14 @@ export function level9() {
   const player = cy.get("div[id='character']");
   
   const bullet = cy.get("app-bullet");
+ 
+  times(6, up);
 
-  up(); // press any key to start
-  
-  up();
-  up();
-  up();
-  up();
-  up();
-
-  right();
-  right();
-  right();
-  right();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
-  space();
+  times(4, right);
+  times(12, space);
   left();
+}
+
+function times(times, func) {
+  for (let i = 0; i < times; ++i) func();
 }
