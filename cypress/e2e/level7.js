@@ -1,16 +1,6 @@
 const word = "ATLANTIS";
 
-// export function level7() {
-//   let letters = cy.get(`div[class='draggable-cube']`);
-//   let targets = cy.get(`div[class='target-slot']`);
-//
-//   for (let i = 0; i < word.length; i++) {
-//     let c = word.charAt(i);
-//     console.log(letters);
-//   }
-// }
-
-export function level7(){
+export function level7() {
   cy.get('div.target-slot').then(($targets) => {
     let targets = $targets.toArray();
     targets = targets.map((t) => cy.wrap(t));
