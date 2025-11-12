@@ -18,5 +18,6 @@ describe("template spec", () => {
   it("passes", () => {
     doLogin();
     level1(cy);
+    level3();
   });
 })
