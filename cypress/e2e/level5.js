@@ -3,8 +3,8 @@ export function level5() {
   let max = 1;
 
   for (let i = 0; i < max; i++){
-    let button = cy.get(`div[id^='square-${i}']`);
-    let button2 = cy.get(`div[id^='square-${i}']`);
+    let button = cy.get(`div[id='square-${i}']`);
+    let button2 = cy.get(`div[id='square-${i}']`);
 
     button.trigger('mouseover', {force: true});
     cy.tick(25000);
