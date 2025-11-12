@@ -9,7 +9,8 @@ export function level9() {
   // const player = cy.get("div[id='character']");
   
   // const bullet = cy.get("app-bullet");
- 
+  cy.tick(12000);
+
   times(6, up);
 
   times(4, right);
