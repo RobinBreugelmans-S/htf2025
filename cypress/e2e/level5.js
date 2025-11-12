@@ -22,16 +22,12 @@
 
 export function level5() {
   cy.tick(25000);
-
   cy.get(`div[id^='square-']`).each((value) => {
     cy.wrap(value).trigger("mouseover", {force: true});
     cy.tick(25000);
 
     cy.wrap(value).invoke('attr', 'class').then((classes) => {
-      if(classes.includes("active")) {
-        cy.wrap(value).dblclick({force: true});
-        return false;
-      }
+      if(classes.includes("active")) cy.wrap(value).dblclick({force: true});
     });
   });
 }
