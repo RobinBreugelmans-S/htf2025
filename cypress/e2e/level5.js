@@ -1,4 +1,4 @@
-export function level5(){
+export function level5() {
   cy.tick(25000);
 
   for (let i = 1; i <= 4; i++){
