@@ -4,6 +4,10 @@ Cypress.on('window:before:load', (cyWindow) => {
   //disableMotion(cyWindow);
 });
 
+Cypress.on('window:load', (cyWindow) => {
+  disableMotion(cyWindow);
+});
+
 describe("template spec", () => {
   before(() => {
     cy.clock();
@@ -18,6 +22,5 @@ describe("template spec", () => {
     cy.get("button[class='btn btn-primary']").click();
     cy.tick(200000);
 
-    cy.get
   });
 })
