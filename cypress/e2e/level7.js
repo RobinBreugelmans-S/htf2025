@@ -7,26 +7,26 @@ export function level7() {
 
     cy.get('div.draggable-cube').then(($els) => {
       let letters = $els.toArray();
-      let letter_c = letters.map(el => el.innerText);
+      let letter_char = letters.map(el => el.innerText);
 
-      let monster = {};
+      let dict = {};
 
       for (let i = 0; i < word.length; i++) {
-        let char = letter_c[i];
+        let char = letter_char[i];
 
-        if (char in monster){
-          monster[char].push(cy.wrap(letters[i]));
+        if (char in dict){
+          dict[char].push(cy.wrap(letters[i]));
         } else {
-          monster[char] = [cy.wrap(letters[i])];
+          dict[char] = [cy.wrap(letters[i])];
         }
       }
 
-      console.log(monster);
+      console.log(dict);
 
       for (let i = 0; i < word.length; i++){
         let char = word.charAt(i);
 
-        let button = monster[char].shift();
+        let button = dict[char].shift();
         
         const dataTransfer = new DataTransfer;
         button.trigger("dragstart", { dataTransfer });
