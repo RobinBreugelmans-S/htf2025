@@ -4,5 +4,4 @@ export function level8() {
   crystalButton.click();
   crystalButton.trigger("mousedown"); 
   cy.tick(10000);
-  crystalButton.trigger("mouseup");
 }

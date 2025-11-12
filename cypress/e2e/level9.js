@@ -5,10 +5,10 @@ const up = () => cy.press(Cypress.Keyboard.Keys.UP);
 const down = () => cy.press(Cypress.Keyboard.Keys.DOWN);
 
 export function level9() {
-  const boss = cy.get("div[class='boss']");
-  const player = cy.get("div[id='character']");
+  // const boss = cy.get("div[class='boss']");
+  // const player = cy.get("div[id='character']");
   
-  const bullet = cy.get("app-bullet");
+  // const bullet = cy.get("app-bullet");
  
   times(6, up);
 
