@@ -1,5 +1,6 @@
+const word = "ATLANTIS";
+
 export function level7() {
-  const word = "ATLANTIS";
   for(let i = 0; i < word.length; ++i) {
     let letter = cy.get(`div[class='draggable-cube', data-letter='${word[i]}']`);
     let target = cy.get(`div[class='target-slot', data-letter='${word[i]}']`);

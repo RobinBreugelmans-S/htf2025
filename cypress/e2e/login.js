@@ -1,6 +1,6 @@
 export function doLogin() {
     cy.visit("https://hackthefuture.bignited.be");
-    cy.get("button[class^='center-button']").click();
+    cy.get("button[class='center-button']").click();
     cy.tick(25000);
     cy.get("div[id='female']").click();
     cy.tick(1000);
