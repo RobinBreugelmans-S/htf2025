@@ -3,6 +3,7 @@ import { doLogin } from "./login";
 import { level1 } from "./level1";
 import { level3 } from "./level3";
 import { level4 } from "./level4";
+import { level5 } from "./level5";
 
 Cypress.on('window:before:load', (cyWindow) => {
   //disableMotion(cyWindow);
@@ -22,5 +23,6 @@ describe("template spec", () => {
     level1(cy);
     level3();
     level4();
+    level5();
   });
 })
