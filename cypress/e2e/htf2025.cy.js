@@ -13,6 +13,7 @@ Cypress.on('window:load', (cyWindow) => {
 describe("template spec", () => {
   before(() => {
     cy.clock();
+    console.clear();
   })
 
   it("passes", () => {
