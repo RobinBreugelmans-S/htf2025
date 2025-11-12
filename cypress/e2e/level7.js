@@ -35,6 +35,6 @@ export function level7() {
       }
     });
   });
+
+  cy.tick(20000);
 }
-
-
